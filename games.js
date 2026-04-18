@@ -1,0 +1,20 @@
+export const games = [
+  "abalone",
+  "avalon",
+  "azul",
+  "carcassonne",
+  "catan",
+  "codenames",
+  "coup",
+  "cricket-champions",
+  "dixit",
+  "dobble",
+  "flip-7",
+  "jaipur",
+  "mafia",
+  "saboteur",
+  "secret-hitler",
+  "splendor",
+  "taboo",
+  "the-mind"
+];
