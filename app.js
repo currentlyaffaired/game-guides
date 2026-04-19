@@ -40,12 +40,16 @@ function animateCards() {
 // ---------- INDEX ----------
 if (isIndex) {
   const container = document.getElementById("list");
+  const searchInput = document.getElementById("search");
 
-  [...games]
-    .sort((a, b) =>
-      formatName(a).localeCompare(formatName(b))
-    )
-    .forEach(name => {
+  let sortedGames = [...games].sort((a, b) =>
+    formatName(a).localeCompare(formatName(b))
+  );
+
+  function render(list) {
+    container.innerHTML = "";
+
+    list.forEach(name => {
       const card = document.createElement("div");
       card.className = "card";
 
@@ -54,10 +58,32 @@ if (isIndex) {
       link.textContent = formatName(name);
 
       card.appendChild(link);
+
+      // make whole card clickable
+      card.addEventListener("click", () => {
+        window.location.href = `game.html?name=${name}`;
+      });
+
       container.appendChild(card);
     });
 
-  animateCards();
+    animateCards();
+  }
+
+  render(sortedGames);
+
+  // search
+  if (searchInput) {
+    searchInput.addEventListener("input", e => {
+      const query = e.target.value.toLowerCase();
+
+      const filtered = sortedGames.filter(name =>
+        formatName(name).toLowerCase().includes(query)
+      );
+
+      render(filtered);
+    });
+  }
 }
 
 
