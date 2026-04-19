@@ -109,6 +109,14 @@ a {
   margin: auto;
 }
 
+#content .card {
+  margin-bottom: 20px;
+}
+
+#content .card:last-child {
+  margin-bottom: 0;
+}
+
 /* ---------- BACK BUTTON ---------- */
 
 .back {
