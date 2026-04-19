@@ -79,9 +79,9 @@ h1 {
   border: 1px solid var(--border);
   transition: 0.3s ease;
   cursor: pointer;
-
   opacity: 0;
   transform: translateY(15px);
+  margin-bottom: 20px;
 }
 
 .card.show {
